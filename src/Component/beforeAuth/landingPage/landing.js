@@ -1,9 +1,11 @@
-import * as React from 'react'
+import React, {Component} from 'react';
 
-const Landing = () => {
-    return(
-        <div>Hello world</div>
-    )
+class Landing extends Component{
+    render(){
+        return(
+            <div>Hello world</div>
+        )
+    }
 }
 
 export default Landing
