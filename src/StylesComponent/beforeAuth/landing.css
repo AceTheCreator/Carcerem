@@ -1,0 +1,33 @@
+.header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.hero-text{
+    width: 50%;
+}
+.header-text{
+    margin-top: 25%;
+    margin-left: 29%;
+}
+.header-text h1{
+    font-weight: bold;
+}
+
+.header-text p{
+    font-family: 'Rubik', sans-serif;
+    margin-top: 10px;
+}
+.call-to-action button{
+    border-radius: 0px;
+    margin-top: 10;
+    background: black;
+    border-color: transparent;
+}
+.header-bg{
+    background: url('../../static/header.png');
+    width: 50%;
+    background-position: center;
+    background-size: cover;
+    height: 91vh;
+}

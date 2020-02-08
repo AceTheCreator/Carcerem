@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+.navbar{
+    background: black;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    height: 9vh;
+}
+.navbar span{
+    color: white;
+}
+.link{
+    margin-top: 10px;
+    color: white !important;
+    font-size: 13px;
+    font-weight: bold;
+}
+.login-btn{
+    font-weight: bold;
+    font-size: 13px;
+    position: relative;
+    border-radius: 0px;
+    background: white;
+    border-color: white;
+    margin-top: -6px;
+    color: black;
+}
