@@ -3,12 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-<<<<<<< HEAD
 import {HashRouter} from 'react-router-dom';
-=======
-import {BrowserRouter} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
->>>>>>> 877a4b422472ce08b56be7799b65afb2900b40a0
 
 ReactDOM.render(<HashRouter>
 <App />
