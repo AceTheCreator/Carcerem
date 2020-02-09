@@ -6,6 +6,11 @@ import swal from "sweetalert";
 import { Formik } from "formik";
 
 class LoginPage extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+
   validate = values => {
     const errors = {};
 
@@ -43,20 +48,22 @@ class LoginPage extends React.Component {
       .then(data => {
         console.log(data);
         console.log(data.accountUser.id);
+        localStorage.setItem('userId',data.accountUser.id);
+        localStorage.setItem('username',data.accountUser.username);
         swal({
           text: "Login successful",
           icon: "success",
           button: "Proceed to Dashboard"
         }).then(value => {
           this.props.history.push({
-            pathname: "/dashboard",
+            pathname: "/cases",
             state: { userId: data.accountUser.id }
           });
         });
         setTimeout(() => {
           swal.close();
           this.props.history.push({
-            pathname: "/dashboard",
+            pathname: "/cases",
             state: { userId: data.accountUser.id }
           });
         }, 2000);

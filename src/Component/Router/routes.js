@@ -7,6 +7,7 @@ import Case from '../afterAuth/dashboard/case.js';
 import CreateCase from '../afterAuth/dashboard/createCase.js'
 import RegistrationPage from '../beforeAuth/registration/register';
 import LoginPage from '../beforeAuth/login/login';
+import InstitutionRegistration from '../beforeAuth/institution/institution-registration';
 
 const router = () => {
     return(
@@ -18,6 +19,7 @@ const router = () => {
         <Route path='/create-case' component={CreateCase} />
         <Route path='/register' exact component={RegistrationPage} />
         <Route path='/login' exact component={LoginPage} />
+        <Route path='/lawyer_register' exact component={InstitutionRegistration} />
         </Switch>
     )
 }
