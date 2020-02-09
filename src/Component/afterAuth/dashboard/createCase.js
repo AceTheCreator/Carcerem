@@ -5,23 +5,17 @@ import axios from 'axios';
 
 class CreateCase extends Component{
     state = {
-      details:{
-        name : "Adekunle",
-        crimeDescription: "ONi",
-        allegedCrime : "Stealing",
-        inmateStatus : "arrested",
-        judgement : "Not judged",
-      },
+        name : "",
+        crimeDescription: "",
+        allegedCrime : "",
+        inmateStatus : "",
       creatorUsername : "ayodoe",
 
     }
 
-    handleChange = event => {
+    handleChange = (event) => {
         this.setState({ 
-            name: event.target.value,
-            crimeDescription:event.target.value,
-            allegedCrime:event.target.value,
-            inmateStatus:event.target.value,
+           [event.target.name] : event.target.value
          });
       }
    
@@ -30,11 +24,11 @@ class CreateCase extends Component{
         event.preventDefault();
     
         const inmateDetails = {
-          name: this.state.details.name,
-          crimeDescription:this.state.details.crimeDescription,
-          allegedCrime:this.state.details.allegedCrime,
-          inmateStatus:this.state.details.inmateStatus,
-          judgement:this.state.details.judgement,
+          name: this.state.name,
+          crimeDescription:this.state.crimeDescription,
+          allegedCrime:this.state.allegedCrime,
+          inmateStatus:this.state.inmateStatus,
+          judgement:this.state.judgement,
         };
         const proxy = "https://cors-anywhere.herokuapp.com/";
         axios.post(`${proxy}https://cacerem.herokuapp.com/inmate/create`, { inmateDetails })
@@ -42,22 +36,26 @@ class CreateCase extends Component{
             console.log(res);
             console.log(res.data);
           })
-          console.log(this.state.details)
+          console.log(this.state)
+          console.log(this.state.allegedCrime)
       }
     render(){
         return(
             <div className='create-case'>
               <Container className='case-form'>
-              <Form>
+              <Form onSubmit={this.handleSubmit}>
   <Form.Row>
     <Form.Group as={Col} controlId="formGridEmail">
       <Form.Label>Inmate Fullname</Form.Label>
-      <Form.Control type="text" placeholder="Enter  inmate fullname" />
+      <Form.Control type="text" name='name' value={this.state.name} onChange={this.handleChange} placeholder="Enter  inmate fullname" />
     </Form.Group>
 
-    <Form.Group as={Col} controlId="formGridPassword">
+    <Form.Group as={Col} controlId="formGridState">
       <Form.Label>Alleged Crime</Form.Label>
-      <Form.Control type="text" placeholder="Enter Alleged Crime" />
+      <Form.Control as="select">
+        <option name='petty_theft'>PETTY_THEFT</option>
+        <option name='armed_robbery'>ARMED_ROBBERY</option>
+      </Form.Control>
     </Form.Group>
   </Form.Row>
 
@@ -72,7 +70,7 @@ class CreateCase extends Component{
       </Form.Control>
     </Form.Group>
 
-    <Form.Group as={Col} controlId="formGridState">
+    <Form.Group as={Col} hidden controlId="formGridState">
       <Form.Label>Is Inmate Judged ?</Form.Label>
       <Form.Control as="select">
         <option>Judged</option>
