@@ -35,6 +35,7 @@ class Cases extends Component {
   }
 
   launchCase = caseId => {
+    localStorage.setItem('case', caseId);
     this.props.history.push(`/case:${caseId}`);
   }
 

@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import {Container, Button} from 'react-bootstrap';
+import {Container, Button, Modal} from 'react-bootstrap';
 import axios from 'axios';
 
 class Case extends Component {
     state={
-        data: []
+        data: [],
+        lawyer: false
 
     }
     componentDidMount(){
@@ -12,8 +13,9 @@ class Case extends Component {
     }
     async getDataAxios(){
         const proxy = "https://cors-anywhere.herokuapp.com/";
+        const id = localStorage.getItem('case');
         const response =
-          await axios.get(`${proxy}https://cacerem.herokuapp.com/inmate/get_inmate?inmateId=11`)
+          await axios.get(`${proxy}https://cacerem.herokuapp.com/inmate/get_inmate?inmateId=${id}`)
           this.setState({
               data: response.data
           })
@@ -21,7 +23,10 @@ class Case extends Component {
         console.log(response.data)
     }
     OnGetALawyerClick = () => {
-        this.getALawyer()
+        // this.getALawyer()
+        this.setState({
+            lawyer: true
+        })
     }
      getALawyer = event =>{
     const inmateDetails = {
@@ -57,6 +62,20 @@ class Case extends Component {
 
                <div className='get-a-lawyer'>
                    <Button type='submit' onClick={this.OnGetALawyerClick}>Get a lawyer</Button>
+                   {this.state.lawyer && <Modal.Dialog>
+  <Modal.Header closeButton>
+    <Modal.Title>Lawyer</Modal.Title>
+  </Modal.Header>
+
+  <Modal.Body>
+    <p>A lawyer, Omoboriola, with the number, 08107441596 has been assigned to you
+    </p>
+  </Modal.Body>
+
+  <Modal.Footer>
+    <Button variant="secondary">Close</Button>
+  </Modal.Footer>
+</Modal.Dialog>}
                    </div>
 
            </div>

@@ -15,7 +15,7 @@ const router = () => {
         <Route path='/' exact component={Landing} />
         <Route path='/dashboard' component={Dashboard} />
         <Route path = '/cases' component={Cases} />
-        <Route path='/case/:id' component={Case} />
+        <Route path='/case:id' component={Case} />
         <Route path='/create-case' component={CreateCase} />
         <Route path='/register' exact component={RegistrationPage} />
         <Route path='/login' exact component={LoginPage} />
