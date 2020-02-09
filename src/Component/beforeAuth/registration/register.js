@@ -49,11 +49,11 @@ class RegistrationPage extends React.Component {
           icon: "success",
           button: "Proceed to Dashboard"
         }).then(value => {
-          this.props.history.push("/dashboard");
+          this.props.history.push("/login");
         });
         setTimeout(() => {
           swal.close();
-          this.props.history.push("/dashboard");
+          this.props.history.push("/login");
         }, 2000);
       })
       .catch(err => {
