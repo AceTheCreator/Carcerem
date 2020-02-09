@@ -8,7 +8,7 @@ const Navigation = () => {
     return(
         <Navbar className='navbar' variant="light">
         <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <img
             alt=""
             src={logo}
@@ -21,6 +21,7 @@ const Navigation = () => {
         <Nav className="ml-auto">
       <Nav.Link href="#home" className='link'>Info portal</Nav.Link>
       <Nav.Link href="#features" className='link'>Institution</Nav.Link>
+      <Nav.Link href="#features" className='link'>Cases</Nav.Link>
       <Nav.Link href="#pricing" className='link'>Login</Nav.Link>
       <Nav.Link href="#" className='link'><Button className='login-btn'>Register</Button></Nav.Link>
     </Nav>

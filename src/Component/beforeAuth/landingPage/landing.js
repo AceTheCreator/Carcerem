@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import '../../../StylesComponent/beforeAuth/landing.css';
-import {Container, Button} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 
 class Landing extends Component{
     render(){
@@ -18,7 +18,7 @@ const Header = () =>{
             <div className='hero-text'>
                <div className='container'>
                    <div className='header-text'>
-                       <h1>Help Bring Justice</h1>
+                       <h1>Help Fight For Justice In Prison</h1>
                        <p className='text-summary'>250 prisons in nigeria with 50,000 total capacity but <br /> the total  prisoners are more than 75,000 <br /> and 70percent are awaiting trial</p>
                        <div className='call-to-action'>
                            <Button>Report an emergency</Button>

@@ -2,13 +2,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    background: #ffffff;
 }
 .hero-text{
     width: 50%;
 }
 .header-text{
-    margin-top: 25%;
+    margin-top: 20%;
     margin-left: 29%;
+    line-height: 1.8;
 }
 .header-text h1{
     font-weight: bold;
@@ -19,13 +21,17 @@
     margin-top: 10px;
 }
 .call-to-action button{
-    border-radius: 0px;
+    padding: 10px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 5px;
     margin-top: 10;
-    background: black;
+    background: #333333;;
     border-color: transparent;
 }
 .header-bg{
-    background: url('../../static/header.png');
+    background: url('../../static/crave.png');
     width: 50%;
     background-position: center;
     background-size: cover;
