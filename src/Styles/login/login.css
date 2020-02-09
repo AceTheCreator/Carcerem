@@ -1,0 +1,49 @@
+.main {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+    flex-flow: wrap;
+    flex-direction: column;
+  }
+  
+  #content {
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12),
+      0 3px 5px -1px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-content: center;
+    flex-flow: wrap;
+    flex-direction: column;
+  }
+  
+  .content {
+    width: 50%;
+    margin-left: 60px;
+    align-self: flex-start;
+  }
+  
+  .title {
+    text-align: center;
+  }
+  
+  #button {
+    display: block;
+    position: absolute;
+    left: 37.5%;
+    bottom: 25px;
+    width: 25%;
+    margin-bottom: 0;
+  }
+  
+  #header-bg-login {
+    background: url('../../static/crave.png');
+  }
+  
+  .form-wide {
+    width: 120%;
+  }

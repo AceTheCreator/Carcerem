@@ -7,7 +7,9 @@ import swal from "sweetalert";
 import { Formik } from "formik";
 
 class RegistrationPage extends React.Component {
-  state = {};
+  constructor(props) {
+    super(props);
+  }
   // Synchronous validation
   validate = values => {
     const errors = {};
@@ -43,6 +45,8 @@ class RegistrationPage extends React.Component {
       .then(response => response.json())
       .then(data => {
         console.log(data);
+        localStorage.setItem('userId',data.accountUser.id);
+        localStorage.setItem('username',data.accountUser.username);
         swal({
           title: "Registration Complete",
           text: "Welcome to Carcerem!",
